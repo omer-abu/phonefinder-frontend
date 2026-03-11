@@ -4,7 +4,7 @@ import AppLayout from "./cmps/layout/AppLayout"
 const App = () => {
   return (
     <div>
-      <HashRouter basename={import.meta.env.BASE_URL}>
+      <HashRouter>
         <AppLayout />
       </HashRouter>
     </div>
