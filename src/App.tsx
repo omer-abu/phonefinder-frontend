@@ -1,12 +1,12 @@
-import { BrowserRouter } from "react-router-dom"
+import { HashRouter } from "react-router-dom"
 import AppLayout from "./cmps/layout/AppLayout"
 
 const App = () => {
   return (
     <div>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <HashRouter basename={import.meta.env.BASE_URL}>
         <AppLayout />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
