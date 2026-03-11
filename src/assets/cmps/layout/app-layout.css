@@ -1,0 +1,9 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--spacing-xl) * 3);
+}
+
+.app-layout > * {
+  flex: 1;
+}

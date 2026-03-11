@@ -1,0 +1,72 @@
+.range-slider {
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+
+  & .range-slider__thumb {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: white;
+    outline: solid thin black;
+
+    &[data-disabled] {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: 0;
+      box-shadow: 0 0 0 6px rgba(33, 150, 243, 0.5);
+    }
+  }
+
+  & .range-slider__range {
+    position: absolute;
+    z-index: 1;
+    transform: translate(0, -50%);
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-radius: 6px;
+  }
+
+  & input[type="range"] {
+    -webkit-appearance: none;
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &::-moz-range-thumb {
+      width: 0;
+      height: 0;
+      border: 0;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}

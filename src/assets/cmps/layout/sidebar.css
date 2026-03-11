@@ -1,0 +1,11 @@
+.sidebar {
+  flex: 1;
+  max-width: 280px;
+
+  padding: var(--spacing-lg);
+
+  border-top: var(--border-main);
+  border-right: var(--border-main);
+
+  background-color: canvas;
+}

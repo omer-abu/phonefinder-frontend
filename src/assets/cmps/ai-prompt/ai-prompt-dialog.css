@@ -1,0 +1,35 @@
+#ai-prompt-dialog {
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid black;
+
+  > .dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    > textarea {
+      resize: none;
+
+      padding: 0.5rem;
+      margin-block-end: 2rem;
+
+      border: none;
+      border-radius: var(--radius-sm);
+      outline: 1px solid black;
+
+      font-size: large;
+
+      &:focus {
+        outline: 2px solid black;
+      }
+    }
+
+    > .buttons-contaier {
+      align-self: end;
+
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}

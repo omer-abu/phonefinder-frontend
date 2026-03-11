@@ -1,0 +1,35 @@
+.phone-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: var(--spacing-sm);
+
+  & .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    & select {
+      padding: 8px;
+
+      background-color: white;
+      border: 1 solid black;
+      border-radius: var(--radius-sm);
+
+      & option {
+        font-size: medium;
+      }
+    }
+
+    & label {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    > div {
+      display: flex;
+      gap: 8px;
+      font-size: small;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.filter-group {
+  > div {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+   span {
+    font-size: 1rem;
+   }
+}

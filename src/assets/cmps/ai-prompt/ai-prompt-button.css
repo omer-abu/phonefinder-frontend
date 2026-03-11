@@ -1,0 +1,14 @@
+.ai-prompt-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  svg {
+    fill: transparent;
+  }
+
+  &:hover svg {
+    transition: fill 300ms ease-out;
+    fill: black;
+  }
+}

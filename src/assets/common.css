@@ -1,0 +1,148 @@
+/* CSS Variables */
+:root {
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+
+  /* Colors */
+  --color-white: white;
+  --color-black: black;
+  --color-gray-light: #f0f0f0;
+  --color-gray-border: #eee;
+  --color-gray-text: #666;
+  --color-gray-text-dark: #555;
+  --color-text-primary: #333;
+
+  /* Borders */
+  --border-thin: 1px;
+  --border-color-main: var(--color-black);
+  --border-color-light: var(--color-gray-border);
+  --border-main: var(--border-thin) solid var(--border-color-main);
+  --border-light: var(--border-thin) solid var(--border-color-light);
+
+  /* Shadows */
+  --shadow-inset: inset 0 -2px 12px rgba(0, 0, 0, 0.1);
+  --shadow-inset-subtle: inset 0 0 12px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+}
+
+/* Common Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gap-xs {
+  gap: var(--spacing-xs);
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+.gap-xl {
+  gap: var(--spacing-xl);
+}
+
+.padding-xl {
+  padding: var(--spacing-xl);
+}
+
+.padding-lg {
+  padding: var(--spacing-lg);
+}
+
+.border-main {
+  border: var(--border-main);
+}
+
+.border-bottom-main {
+  border-bottom: var(--border-main);
+}
+
+.border-bottom-light {
+  border-bottom: var(--border-light);
+}
+
+.border-left-main {
+  border-left: var(--border-main);
+}
+
+.border-right-main {
+  border-right: var(--border-main);
+}
+
+.border-top-main {
+  border-top: var(--border-main);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* Scrollbar Styling */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.inner-shadow {
+  box-shadow: var(--shadow-inset-subtle);
+}

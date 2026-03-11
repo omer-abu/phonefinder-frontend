@@ -1,0 +1,15 @@
+.introduction {
+  text-align: left;
+  margin-block-end: 5em;
+
+  > .title {
+    text-align: left;
+    font-size: 9rem;
+  }
+
+  > P {
+    max-width: 75ch;
+    font-size: 1.25rem;
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,24 @@
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  & .phone-search-input {
+    width: 33%;
+
+    border: none;
+    padding: var(--spacing-xs);
+    font-size: medium;
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: var(--spacing-md);
+
+    transition: box-shadow 200ms ease-out;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
