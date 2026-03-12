@@ -1,7 +1,8 @@
-import { forwardRef, useRef } from "react"
+import { forwardRef, useRef, useState } from "react"
 import { askLLM } from "../../services/ask-ai.service"
 import { useNavigate } from "react-router-dom"
 import type { PhoneFilterType } from "../../types/phone"
+import { Loader } from "lucide-react"
 
 type AiPromptDialogProps = {
   toggleDialog: () => void
@@ -20,6 +21,8 @@ function filtersToUrlParams(filterObj: Partial<PhoneFilterType>) {
 
 const AiPromptDialog = forwardRef<HTMLDialogElement, AiPromptDialogProps>(
   ({ toggleDialog }, dialogRef) => {
+    const [isLoading, setIsLoading] = useState(false)
+
     const promptAreaRef = useRef<HTMLTextAreaElement>(null)
 
     const navigate = useNavigate()
@@ -28,11 +31,17 @@ const AiPromptDialog = forwardRef<HTMLDialogElement, AiPromptDialogProps>(
       if (!promptAreaRef.current) return
 
       const prompt = promptAreaRef.current.value
-      const llmFilters = await askLLM(prompt)
-      const queryString = filtersToUrlParams(llmFilters)
-      console.log(queryString)
 
-      navigate(`/phones?${queryString}`, { replace: true })
+      try {
+        setIsLoading(true)
+        const llmFilters = await askLLM(prompt)
+        setIsLoading(false)
+        const queryString = filtersToUrlParams(llmFilters)
+        navigate(`/phones?${queryString}`, { replace: true })
+      } catch (error) {
+        setIsLoading(false)
+        console.error("Error in onSubmit:", error)
+      }
 
       if (dialogRef && typeof dialogRef !== "function") {
         dialogRef.current?.close()
@@ -45,7 +54,7 @@ const AiPromptDialog = forwardRef<HTMLDialogElement, AiPromptDialogProps>(
         id="ai-prompt-dialog"
         className="inner-shadow"
         onClick={e => {
-          if (e.currentTarget === e.target) toggleDialog()
+          if (e.currentTarget === e.target && !isLoading) toggleDialog()
         }}
       >
         <div className="dialog-content">
@@ -61,6 +70,16 @@ const AiPromptDialog = forwardRef<HTMLDialogElement, AiPromptDialogProps>(
             <button onClick={() => toggleDialog()}>Close</button>
           </div>
         </div>
+
+        {isLoading && (
+          <div className="waiting">
+            <span>Getting right on it!</span>
+            <Loader
+              width={32}
+              height={32}
+            />
+          </div>
+        )}
       </dialog>
     )
   }
